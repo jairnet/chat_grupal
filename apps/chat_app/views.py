@@ -16,8 +16,8 @@ def chat(request):
     if request.method != 'POST':
         return HttpResponseRedirect(reverse('index'))
     else:
-        nombre = request.POST.get('nombre')
-        return render(request, 'chat.html', {'nombre': nombre})
+        name = request.POST.get('email')
+        return render(request, 'chat.html', {'nombre': name})
 
 
 def loginView(request):
@@ -28,7 +28,7 @@ def loginView(request):
         user = authenticate(request, username=username, password=password)
         if user:
             login(request, user)
-            return render(request, 'chat.html', {})
+            return render(request, 'chat.html', {'nombre': email})
         else:
             return render(request, 'index.html', {'error': 'Usuario o Password incorrectos'})
     return render(request, 'index.html')

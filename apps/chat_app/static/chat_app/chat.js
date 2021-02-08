@@ -17,14 +17,14 @@ $(document).ready(function(){
 });
 
 function websocket_conexion_ok(){
-	alert('La conexión se ha establecido');
+	alert('Conexión establecida');
 }
 
 function websocket_msj_recibido(e){
 	datos = JSON.parse(e.data);
 	codigo = '<div class="col s12">'				+
 				'<div class="nombre">'				+
-					'<h4>'+ datos.nombre +'</h4>'	+
+					'<h5>'+ datos.nombre +'</h5>'	+
 				'</div>'							+
 				'<div class="contenido">'			+
 					'<p>'+ datos.mensaje +'</p>'	+
