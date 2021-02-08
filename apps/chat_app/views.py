@@ -46,6 +46,6 @@ def registerView(request):
         except IntegrityError:
             return render(request, 'register.html', {'error': 'Usuario ya existe'})
 
-        render(request, 'index.html')
+        return render(request, 'index.html')
 
     return render(request, 'register.html')
